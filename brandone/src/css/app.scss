@@ -1,0 +1,56 @@
+// app global css in SCSS form
+/* GLOBAL GRADIENT PRIMARY COLOR */
+:root {
+  --primary-gradient: linear-gradient(135deg, #be0b0b 20%, #5c0101 50%);
+}
+
+/* Applies to anything using color="primary" */
+.bg-primary {
+  background: var(--primary-gradient) !important;
+  border-color: transparent !important;
+}
+
+.text-primary {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text; /* Chrome, Safari */
+  background-clip: text; /* Standard support */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Safety fallback */
+  display: inline-block; /* FIXES H1/H2/H3/H4 background spread issue */
+}
+
+/* QBTN primary styling */
+.q-btn.bg-primary,
+.q-btn.text-primary {
+  background: var(--primary-gradient) !important;
+  color: white !important;
+}
+
+/* Outline buttons */
+.q-btn--outline.bg-primary {
+  background: var(--primary-gradient) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+/* 1️⃣ Remove the dark standout focus background */
+.q-input--standout.q-input--focused .q-field__inner,
+.q-input--standout.q-input--focused .q-field__control {
+  background-color: transparent !important;
+}
+
+/* 2️⃣ Remove dark overlay layer */
+.q-input--standout.q-input--focused .q-field__control:before,
+.q-input--standout.q-input--focused .q-field__control:after {
+  background: transparent !important;
+  opacity: 0 !important;
+}
+
+/* 3️⃣ Remove Quasar default black inset shadow */
+.q-input--standout.q-input--focused .q-field__control {
+  box-shadow: none !important;
+}
+
+/* 4️⃣ Optional: Change label color on focus */
+.q-input--focused .q-field__label {
+  color: var(--primary-gradient) !important;
+}
